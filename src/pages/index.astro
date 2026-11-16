@@ -1,17 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Badge from '../components/Badge.astro'
+import Button from '../components/Button.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 ---
 
 <BaseLayout
   title="Navidad Solidaria | Rivanimal"
   description="Regala amor con cuatro patas. Cada compra a través de este catálogo navideño ayuda directamente a los perros del refugio Rivanimal."
 >
+  <!-- Temporary preview of the step 3 primitives; replaced by the landing sections. -->
   <main id="main-content" class="page-shell py-24">
-    <h1 class="font-display text-4xl font-extrabold text-forest-600">
-      Rivanimal
-    </h1>
-    <p class="mt-4 text-ink-700">
-      La landing de Navidad solidaria se está preparando.
-    </p>
+    <SectionHeading
+      eyebrow="• Cómo funciona"
+      title="Regalar es muy sencillo"
+      description="Elige una idea del catálogo y ve a comprarla a cualquier tienda física de tu preferencia o pídela online, luego tráela a Rivanimal y los Reyes Magos se lo darán a los peludos."
+    />
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <Button href="#catalogo">Ver todos los regalos →</Button>
+      <Button href="#como-funciona" variant="outline-dark">
+        ¿Cómo funciona?
+      </Button>
+    </div>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-2">
+      <Badge variant="berry">🧸 Juguetes</Badge>
+      <Badge variant="forest">🛏️ Camas y mantas</Badge>
+      <Badge variant="flame">🍖 Alimentación</Badge>
+      <Badge variant="ink">💊 Salud y cuidado</Badge>
+      <Badge variant="gold">Para el invierno</Badge>
+    </div>
+
+    <div class="mt-16 flex flex-wrap justify-center gap-3 rounded-card bg-forest-600 px-6 py-10">
+      <Button href="#como-funciona" variant="outline-light">
+        ¿Cómo funciona?
+      </Button>
+    </div>
+
+    <div class="mt-16 rounded-card bg-blush-50 px-6 py-12">
+      <SectionHeading
+        eyebrow="🎄 Catálogo de Navidad"
+        eyebrowTone="forest"
+        title="Regalos para los peludos del refugio"
+        description="Ideas de regalos para los perros del refugio. Recuerda que son orientativos."
+      />
+    </div>
   </main>
 </BaseLayout>
