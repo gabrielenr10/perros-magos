@@ -1,1 +1,74 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Brand palette (sampled from the landing mockup) */
+  --color-forest-600: #2c6b4e;
+  --color-forest-700: #245a41;
+  --color-forest-800: #1d4a35;
+
+  --color-blush-50: #faeceb;
+  --color-blush-100: #f6dedd;
+
+  --color-flame-500: #ed5327;
+  --color-flame-600: #cf4318;
+  --color-flame-700: #b8431f;
+
+  --color-ink-700: #344755;
+  --color-ink-800: #2c3b44;
+  --color-ink-900: #26384a;
+
+  --color-berry-600: #ba382b;
+
+  --color-gold-400: #f3ca4c;
+  --color-cream-50: #fff8e7;
+  --color-cream-200: #f0e2b6;
+
+  --color-mist-200: #e0e0e0;
+
+  /* Typography */
+  --font-display: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Surfaces */
+  --radius-card: 1rem;
+  --shadow-card:
+    0 1px 2px 0 rgb(0 0 0 / 0.04), 0 8px 24px -4px rgb(0 0 0 / 0.06);
+}
+
+@utility page-shell {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-white);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  :where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
