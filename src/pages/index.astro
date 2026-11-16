@@ -1,17 +1,17 @@
 ---
-import '../styles/global.css'
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout
+  title="Navidad Solidaria | Rivanimal"
+  description="Regala amor con cuatro patas. Cada compra a través de este catálogo navideño ayuda directamente a los perros del refugio Rivanimal."
+>
+  <main id="main-content" class="page-shell py-24">
+    <h1 class="font-display text-4xl font-extrabold text-forest-600">
+      Rivanimal
+    </h1>
+    <p class="mt-4 text-ink-700">
+      La landing de Navidad solidaria se está preparando.
+    </p>
+  </main>
+</BaseLayout>
