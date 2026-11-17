@@ -11,7 +11,7 @@ Work in progress on `feature/landing-page`.
 - [x] `Button`, `Badge`, and `SectionHeading`
 - [x] Hero with temporary logo
 - [x] How-it-works section and step cards
-- [ ] Gift categories and catalog data
+- [x] Gift categories and catalog data
 - [ ] Gift catalog (cards, filters, grid, and notice)
 - [ ] Final call to action
 - [ ] Site footer
@@ -51,7 +51,9 @@ src/
 │   ├── HowItWorks.astro
 │   ├── SectionHeading.astro
 │   └── StepCard.astro
-├── data/                        # planned: categories.ts and gifts.ts
+├── data/
+│   ├── categories.ts            # category ids, labels, emoji, badge tone
+│   └── gifts.ts                 # gift catalog entries
 ├── layouts/
 │   └── BaseLayout.astro
 ├── pages/
