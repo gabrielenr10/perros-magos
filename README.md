@@ -47,6 +47,7 @@ src/
 ├── components/
 │   ├── Badge.astro
 │   ├── Button.astro
+│   ├── GiftCard.astro
 │   ├── Hero.astro
 │   ├── HowItWorks.astro
 │   ├── SectionHeading.astro

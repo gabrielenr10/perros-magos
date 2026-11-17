@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets'
+import Badge from './Badge.astro'
+import { CATEGORIES } from '../data/categories'
+import type { Gift } from '../data/gifts'
+
+interface Props {
+  gift: Gift
+}
+
+const { gift } = Astro.props
+
+const category = CATEGORIES[gift.category]
+const badge = gift.badgeOverride ?? {
+  label: `${category.emoji} ${category.label}`,
+  variant: category.badgeVariant,
+}
+---
+
+<article
+  class="flex h-full flex-col overflow-hidden rounded-card border border-ink-900/5 bg-white shadow-card"
+  data-gift-card
+  data-category={gift.category}
+>
+  <div class="relative aspect-[4/3] overflow-hidden bg-mist-200">
+    {gift.image && (
+      <Image
+        src={gift.image}
+        alt={gift.imageAlt ?? gift.name}
+        class="h-full w-full object-cover"
+      />
+    )}
+
+    <div class="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
+      <Badge variant={badge.variant}>{badge.label}</Badge>
+      <Badge variant="ink">Por confirmar</Badge>
+    </div>
+
+    {gift.highlight && (
+      <Badge variant="gold" class="absolute bottom-3 left-3">
+        {gift.highlight}
+      </Badge>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <h3 class="font-display text-lg font-extrabold text-ink-900">
+      {gift.name}
+    </h3>
+
+    <p class="mt-2 text-sm leading-relaxed text-ink-700">{gift.description}</p>
+
+    <div class="mt-auto flex items-center gap-2 pt-5">
+      <a
+        href={gift.storeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex h-10 flex-1 items-center justify-center rounded-md bg-flame-600 px-4 text-sm font-bold text-white transition-colors hover:bg-flame-700 focus-visible:outline-flame-700 motion-reduce:transition-none"
+      >
+        Comprar regalo
+      </a>
+
+      <button
+        type="button"
+        class="inline-flex size-10 shrink-0 items-center justify-center rounded-md border border-ink-900/10 bg-mist-200/50 text-ink-700"
+        aria-label="Añadir a favoritos (próximamente)"
+        aria-disabled="true"
+        data-favorite
+      >
+        <svg
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</article>
