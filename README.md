@@ -48,6 +48,9 @@ src/
 │   ├── Badge.astro
 │   ├── Button.astro
 │   ├── GiftCard.astro
+│   ├── GiftCatalog.astro
+│   ├── GiftFilters.astro
+│   ├── GiftGrid.astro
 │   ├── Hero.astro
 │   ├── HowItWorks.astro
 │   ├── SectionHeading.astro
