@@ -1,43 +1,77 @@
-# Astro Starter Kit: Minimal
+# Rivanimal · Navidad Solidaria
+
+Landing page for a Christmas letter from the shelter dogs of **Rivanimal**. Visitors browse a catalog of gift suggestions, buy the items in external stores, and deliver them to the shelter, where the "Reyes Magos" hand them to the dogs.
+
+## Status
+
+Work in progress on `feature/landing-page`.
+
+- [x] Design tokens and `page-shell` utility
+- [x] `BaseLayout` with Google Fonts and SEO
+- [x] `Button`, `Badge`, and `SectionHeading`
+- [x] Hero with temporary logo
+- [x] How-it-works section and step cards
+- [ ] Gift categories and catalog data
+- [ ] Gift catalog (cards, filters, grid, and notice)
+- [ ] Final call to action
+- [ ] Site footer
+- [ ] Responsive and accessibility polish
+
+## Stack
+
+- Astro 7 with static output
+- Tailwind CSS 4 through `@tailwindcss/vite`
+- TypeScript
+- pnpm (the only package manager used)
+- Prettier with the Astro and Tailwind plugins
+
+No UI framework and no client-side runtime. The catalog filter will be a small vanilla script.
+
+## Commands
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
+pnpm dev --background   # manage with: astro dev status | stop | logs
+pnpm build
+pnpm preview
+pnpm exec astro ...
+pnpm exec prettier --write .
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── assets/
+│   └── rivanimal-logo.png       # temporary crop from the mockup
+├── components/
+│   ├── Badge.astro
+│   ├── Button.astro
+│   ├── Hero.astro
+│   ├── HowItWorks.astro
+│   ├── SectionHeading.astro
+│   └── StepCard.astro
+├── data/                        # planned: categories.ts and gifts.ts
+├── layouts/
+│   └── BaseLayout.astro
+├── pages/
+│   └── index.astro
+└── styles/
+    └── global.css               # theme tokens, page-shell, base styles
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Conventions
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- All copy is in Spanish and the site is fully static (`lang="es"`).
+- Copy stays colocated in its component. Catalog content lives in `src/data/`, not in a global site config.
+- Colors, fonts, radius, and shadows are Tailwind theme tokens in `src/styles/global.css`.
+- Use the AA-safe oranges for text and buttons: `flame-600` on buttons and `flame-700` for small text. `flame-500` is only for large decorative surfaces.
+- Do not add dependencies unless they are strictly necessary. Explain the reason before adding one.
+- Run Prettier as the final task of every step.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Placeholders
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- The logo is a temporary transparent crop of the mockup; replace it with the official SVG.
+- Gift images are gray placeholders until real product photos are available.
+- Gift store URLs, the "Saber más" target, the contact email, and the footer social links still need real values.
+- The canonical domain and an Open Graph image are intentionally not configured yet.
