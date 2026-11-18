@@ -14,7 +14,7 @@ Work in progress on `feature/landing-page`.
 - [x] Gift categories and catalog data
 - [x] Gift catalog (cards, filters, grid, and notice)
 - [x] Final call to action
-- [ ] Site footer
+- [x] Site footer
 - [ ] Responsive and accessibility polish
 
 ## Stack
@@ -56,6 +56,7 @@ src/
 │   ├── Hero.astro
 │   ├── HowItWorks.astro
 │   ├── SectionHeading.astro
+│   ├── SiteFooter.astro
 │   └── StepCard.astro
 ├── data/
 │   ├── categories.ts            # category ids, labels, emoji, badge tone
