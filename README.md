@@ -12,7 +12,7 @@ Work in progress on `feature/landing-page`.
 - [x] Hero with temporary logo
 - [x] How-it-works section and step cards
 - [x] Gift categories and catalog data
-- [ ] Gift catalog (cards, filters, grid, and notice)
+- [x] Gift catalog (cards, filters, grid, and notice)
 - [ ] Final call to action
 - [ ] Site footer
 - [ ] Responsive and accessibility polish
@@ -47,6 +47,7 @@ src/
 ├── components/
 │   ├── Badge.astro
 │   ├── Button.astro
+│   ├── CatalogNotice.astro
 │   ├── GiftCard.astro
 │   ├── GiftCatalog.astro
 │   ├── GiftFilters.astro
