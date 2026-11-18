@@ -13,7 +13,7 @@ Work in progress on `feature/landing-page`.
 - [x] How-it-works section and step cards
 - [x] Gift categories and catalog data
 - [x] Gift catalog (cards, filters, grid, and notice)
-- [ ] Final call to action
+- [x] Final call to action
 - [ ] Site footer
 - [ ] Responsive and accessibility polish
 
@@ -48,6 +48,7 @@ src/
 │   ├── Badge.astro
 │   ├── Button.astro
 │   ├── CatalogNotice.astro
+│   ├── FinalCta.astro
 │   ├── GiftCard.astro
 │   ├── GiftCatalog.astro
 │   ├── GiftFilters.astro
