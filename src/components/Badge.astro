@@ -1,0 +1,30 @@
+---
+type BadgeVariant = 'berry' | 'forest' | 'flame' | 'ink' | 'gold'
+
+interface Props {
+  variant?: BadgeVariant
+  class?: string
+}
+
+const { variant = 'ink', class: className } = Astro.props
+
+const variants: Record<BadgeVariant, string> = {
+  berry: 'bg-berry-600 text-white',
+  forest: 'bg-forest-600 text-white',
+  flame: 'bg-flame-600 text-white',
+  ink: 'bg-ink-700 text-white',
+  gold: 'bg-gold-400 text-ink-900',
+}
+
+const classes = [
+  'inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] leading-none font-bold',
+  variants[variant],
+  className,
+]
+  .filter(Boolean)
+  .join(' ')
+---
+
+<span class={classes}>
+  <slot />
+</span>

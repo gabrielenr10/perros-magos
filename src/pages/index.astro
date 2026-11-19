@@ -1,17 +1,23 @@
 ---
-import '../styles/global.css'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/Hero.astro'
+import HowItWorks from '../components/HowItWorks.astro'
+import GiftCatalog from '../components/GiftCatalog.astro'
+import CatalogNotice from '../components/CatalogNotice.astro'
+import FinalCta from '../components/FinalCta.astro'
+import SiteFooter from '../components/SiteFooter.astro'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout
+  title="Navidad Solidaria | Rivanimal"
+  description="Regala amor con cuatro patas. Cada compra a través de este catálogo navideño ayuda directamente a los perros del refugio Rivanimal."
+>
+  <main id="main-content">
+    <Hero />
+    <HowItWorks />
+    <GiftCatalog />
+    <CatalogNotice />
+    <FinalCta />
+  </main>
+  <SiteFooter />
+</BaseLayout>

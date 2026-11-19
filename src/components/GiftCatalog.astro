@@ -1,0 +1,23 @@
+---
+import SectionHeading from './SectionHeading.astro'
+import GiftFilters from './GiftFilters.astro'
+import GiftGrid from './GiftGrid.astro'
+import { GIFTS } from '../data/gifts'
+---
+
+<section id="catalogo" class="bg-white py-16 sm:py-20">
+  <div class="page-shell">
+    <SectionHeading
+      eyebrow="🎄 Catálogo de Navidad"
+      eyebrowTone="forest"
+      title="Regalos para los peludos del refugio"
+      description="Ideas de regalos para los perros del refugio. Recuerda que son orientativos."
+    />
+
+    <div class="mt-8" data-catalog>
+      <GiftFilters />
+      <p class="sr-only" role="status" data-gift-count></p>
+      <GiftGrid gifts={GIFTS} class="mt-8" />
+    </div>
+  </div>
+</section>

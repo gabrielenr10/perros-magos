@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../assets/rivanimal-logo.png'
+---
+
+<footer class="bg-white pb-10">
+  <div class="page-shell">
+    <div class="flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+      <!-- TODO: replace with the official logo asset. -->
+      <Image
+        src={logo}
+        alt=""
+        width={56}
+        height={46}
+        densities={[1, 2]}
+        loading="lazy"
+        class="h-9 w-auto"
+      />
+
+      <p class="text-xs leading-relaxed text-ink-700">
+        © Rivanimal · Gestión de voluntariado y adopciones · Todos los derechos
+        reservados
+      </p>
+    </div>
+  </div>
+</footer>

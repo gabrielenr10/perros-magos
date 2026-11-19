@@ -1,0 +1,143 @@
+---
+import SectionHeading from './SectionHeading.astro'
+import StepCard from './StepCard.astro'
+---
+
+<section id="como-funciona" class="bg-blush-50 py-16 sm:py-20">
+  <div class="page-shell">
+    <SectionHeading
+      eyebrow="• Cómo funciona"
+      title="Regalar es muy sencillo"
+      description="Elige una idea del catálogo y ve a comprarla a cualquier tienda física de tu preferencia o pídela online, luego tráela a Rivanimal y los Reyes Magos se lo darán a los peludos."
+    />
+
+    <div class="mx-auto mt-10 grid max-w-md gap-5 md:max-w-none md:grid-cols-3 lg:grid-cols-[1fr_3rem_1fr_3rem_1fr] lg:gap-0">
+      <StepCard
+        step={1}
+        tone="forest"
+        title="Elige un regalo"
+        description="Explora nuestro catálogo navideño y elige el artículo que quieras regalar a los peludos."
+      >
+        <svg
+          slot="icon"
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="10.5" cy="10.5" r="5.5"></circle>
+          <path d="m15 15 4.5 4.5"></path>
+        </svg>
+      </StepCard>
+
+      <div
+        class="hidden items-center justify-center lg:flex"
+        aria-hidden="true"
+      >
+        <svg
+          class="h-2.5 w-10 text-ink-900/20"
+          viewBox="0 0 40 10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M1 5h31" stroke-dasharray="3 4"></path>
+          <path d="m32 1 3.5 4-3.5 4"></path>
+        </svg>
+      </div>
+
+      <StepCard
+        step={2}
+        tone="berry"
+        title="Compra en la tienda"
+        description="Cada regalo tendrá un enlace a una tienda. Los enlaces son orientativos, puedes comprarlo donde prefieras."
+      >
+        <svg
+          slot="icon"
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 10.5V20h16v-9.5"></path>
+          <path d="M3 10.5 5 4h14l2 6.5"></path>
+          <path d="M3 10.5c0 1.5 1.2 2.5 2.8 2.5s2.7-1 2.7-2.5c0 1.5 1.2 2.5 2.7 2.5s2.8-1 2.8-2.5c0 1.5 1.2 2.5 2.7 2.5s2.8-1 2.8-2.5"></path>
+          <path d="M9.5 20v-5h5v5"></path>
+        </svg>
+      </StepCard>
+
+      <div
+        class="hidden items-center justify-center lg:flex"
+        aria-hidden="true"
+      >
+        <svg
+          class="h-2.5 w-10 text-ink-900/20"
+          viewBox="0 0 40 10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M1 5h31" stroke-dasharray="3 4"></path>
+          <path d="m32 1 3.5 4-3.5 4"></path>
+        </svg>
+      </div>
+
+      <StepCard
+        step={3}
+        tone="gold"
+        title="¡Vienen los Reyes Magos!"
+        description="Entrega tu regalo en la recepción de Rivanimal e indica para qué animalito es."
+      >
+        <svg
+          slot="icon"
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <ellipse cx="12" cy="16" rx="4" ry="3.2"></ellipse>
+          <ellipse
+            cx="6.6"
+            cy="11.4"
+            rx="1.7"
+            ry="2.1"
+            transform="rotate(-20 6.6 11.4)"
+          ></ellipse>
+          <ellipse
+            cx="9.6"
+            cy="8.2"
+            rx="1.7"
+            ry="2.1"
+            transform="rotate(-8 9.6 8.2)"
+          ></ellipse>
+          <ellipse
+            cx="14.4"
+            cy="8.2"
+            rx="1.7"
+            ry="2.1"
+            transform="rotate(8 14.4 8.2)"
+          ></ellipse>
+          <ellipse
+            cx="17.4"
+            cy="11.4"
+            rx="1.7"
+            ry="2.1"
+            transform="rotate(20 17.4 11.4)"
+          ></ellipse>
+        </svg>
+      </StepCard>
+    </div>
+  </div>
+</section>
