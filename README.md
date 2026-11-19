@@ -4,7 +4,7 @@ Landing page for a Christmas letter from the shelter dogs of **Rivanimal**. Visi
 
 ## Status
 
-Work in progress on `feature/landing-page`.
+Work in progress on `feature/landing-page`; the layout is complete and real assets and links are still pending.
 
 - [x] Design tokens and `page-shell` utility
 - [x] `BaseLayout` with Google Fonts and SEO
@@ -15,7 +15,7 @@ Work in progress on `feature/landing-page`.
 - [x] Gift catalog (cards, filters, grid, and notice)
 - [x] Final call to action
 - [x] Site footer
-- [ ] Responsive and accessibility polish
+- [x] Responsive and accessibility polish
 
 ## Stack
 
@@ -25,7 +25,7 @@ Work in progress on `feature/landing-page`.
 - pnpm (the only package manager used)
 - Prettier with the Astro and Tailwind plugins
 
-No UI framework and no client-side runtime. The catalog filter will be a small vanilla script.
+No UI framework; the catalog filter is a small vanilla script.
 
 ## Commands
 
@@ -82,5 +82,5 @@ src/
 
 - The logo is a temporary transparent crop of the mockup; replace it with the official SVG.
 - Gift images are gray placeholders until real product photos are available.
-- Gift store URLs, the "Saber más" target, the contact email, and the footer social links still need real values.
+- Gift store URLs, the "Saber más" target, and the contact email still need real values.
 - The canonical domain and an Open Graph image are intentionally not configured yet.

@@ -55,15 +55,18 @@ const badge = gift.badgeOverride ?? {
         href={gift.storeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex h-10 flex-1 items-center justify-center rounded-md bg-flame-600 px-4 text-sm font-bold text-white transition-colors hover:bg-flame-700 focus-visible:outline-flame-700 motion-reduce:transition-none"
+        class="inline-flex h-10 flex-1 items-center justify-center rounded-md bg-flame-600 px-4 text-sm font-bold text-white transition-colors hover:bg-flame-700 focus-visible:outline-flame-700 focus-visible:transition-none motion-reduce:transition-none"
       >
         Comprar regalo
+        <span class="sr-only">
+          : {gift.name} (se abre en una nueva pestaña)
+        </span>
       </a>
 
       <button
         type="button"
         class="inline-flex size-10 shrink-0 items-center justify-center rounded-md border border-ink-900/10 bg-mist-200/50 text-ink-700"
-        aria-label="Añadir a favoritos (próximamente)"
+        aria-label={`Añadir ${gift.name} a favoritos (próximamente)`}
         aria-disabled="true"
         data-favorite
       >

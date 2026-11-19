@@ -2,6 +2,7 @@
 
 @theme {
   /* Brand palette (sampled from the landing mockup) */
+  --color-forest-100: #cfe6dc;
   --color-forest-600: #2c6b4e;
   --color-forest-700: #245a41;
   --color-forest-800: #1d4a35;
@@ -19,6 +20,7 @@
 
   --color-berry-600: #ba382b;
 
+  --color-gold-200: #e6e0a0;
   --color-gold-400: #f3ca4c;
   --color-cream-50: #fff8e7;
   --color-cream-200: #f0e2b6;

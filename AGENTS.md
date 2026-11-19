@@ -26,7 +26,7 @@ Christmas landing page for Rivanimal, a Spanish animal shelter. Visitors browse 
 - Do not add `Container`, `Icon`, `SnowflakeBand`, or `LandingLayout` components; those were deliberately removed.
 - Reuse `Button`, `Badge`, `SectionHeading`, and `StepCard` where they fit.
 - Style with Tailwind utilities and the tokens in `src/styles/global.css`. Root content wrappers use the `page-shell` utility.
-- Section ids in use: `inicio`, `como-funciona`, `catalogo` (catalog pending).
+- Section ids in use: `inicio`, `como-funciona`, `catalogo`.
 - Accessibility: semantic heading order (`h1` → `h2` → `h3`), visible focus, `aria-hidden` on decorations, and respect `prefers-reduced-motion`.
 
 ## Design decisions
@@ -34,9 +34,10 @@ Christmas landing page for Rivanimal, a Spanish animal shelter. Visitors browse 
 - The logo is a temporary transparent crop of the mockup. Product photos are gray placeholders until real assets arrive.
 - Gift cards link to an external `storeUrl`. The heart button is presentational for now: `aria-disabled="true"`, `data-favorite`, no behavior.
 - "Por confirmar" is a static decorative pill on every gift card.
-- The category filters will be a vanilla Astro script with progressive enhancement, not a React island.
+- The category filters are a vanilla Astro script with progressive enhancement, not a React island.
 - Fonts are loaded from Google Fonts (`Nunito` for display, `Nunito Sans` for body) through a `<link>` in `BaseLayout`.
-- Pending real content: gift store URLs, "Saber más" target, contact email and social links, official logo, product photos, canonical domain, and Open Graph image.
+- The footer is intentionally minimal, matching the mockup: logo and copyright line only, with no email or social links.
+- Pending real content: gift store URLs, "Saber más" target, contact email, official logo, product photos, canonical domain, and Open Graph image.
 
 ## Development
 

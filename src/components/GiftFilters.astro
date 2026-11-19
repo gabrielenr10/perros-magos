@@ -18,7 +18,7 @@ const filters = [
 
 <div
   class:list={[
-    '-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0',
+    '-mx-5 flex gap-2 overflow-x-auto px-5 pt-1.5 pb-2 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 sm:pt-0 sm:pb-0',
     className,
   ]}
   role="group"
@@ -28,7 +28,7 @@ const filters = [
   {filters.map((filter) => (
     <button
       type="button"
-      class="inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border border-ink-900/15 bg-white px-4 py-2 text-sm font-semibold whitespace-nowrap text-ink-700 transition-colors hover:bg-blush-50 focus-visible:outline-ink-900 aria-pressed:border-ink-900 aria-pressed:bg-ink-900 aria-pressed:text-white aria-pressed:hover:bg-ink-900 motion-reduce:transition-none"
+      class="inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border border-ink-900/15 bg-white px-4 py-2 text-sm font-semibold whitespace-nowrap text-ink-700 transition-colors hover:bg-blush-50 focus-visible:outline-ink-900 focus-visible:transition-none aria-pressed:border-ink-900 aria-pressed:bg-ink-900 aria-pressed:text-white aria-pressed:hover:bg-ink-900 motion-reduce:transition-none"
       aria-pressed={filter.id === 'todos' ? 'true' : 'false'}
       aria-controls="gift-grid"
       data-filter={filter.id}
@@ -43,10 +43,12 @@ const filters = [
     document.querySelectorAll('[data-catalog]').forEach((catalog) => {
       const buttons = catalog.querySelectorAll('[data-filter]')
       const cards = catalog.querySelectorAll('[data-gift-card]')
+      const count = catalog.querySelector('[data-gift-count]')
 
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
           const filter = button.dataset.filter
+          let visible = 0
 
           buttons.forEach((otherButton) => {
             otherButton.setAttribute(
@@ -56,8 +58,21 @@ const filters = [
           })
 
           cards.forEach((card) => {
-            card.hidden = filter !== 'todos' && card.dataset.category !== filter
+            const matches =
+              filter === 'todos' || card.dataset.category === filter
+
+            card.hidden = !matches
+
+            if (matches) {
+              visible += 1
+            }
           })
+
+          if (count) {
+            count.textContent = `Mostrando ${visible} ${
+              visible === 1 ? 'regalo' : 'regalos'
+            }`
+          }
         })
       })
     })
