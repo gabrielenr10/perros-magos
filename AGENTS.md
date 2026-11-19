@@ -32,7 +32,7 @@ Christmas landing page for Rivanimal, a Spanish animal shelter. Visitors browse 
 ## Design decisions
 
 - The logo is a temporary transparent crop of the mockup. Product photos are gray placeholders until real assets arrive.
-- Gift cards link to an external `storeUrl`. The heart button is presentational for now: `aria-disabled="true"`, `data-favorite`, no behavior.
+- Gift cards link to an external `storeUrl`.
 - "Por confirmar" is a static decorative pill on every gift card.
 - The category filters are a vanilla Astro script with progressive enhancement, not a React island.
 - Fonts are loaded from Google Fonts (`Nunito` for display, `Nunito Sans` for body) through a `<link>` in `BaseLayout`.
