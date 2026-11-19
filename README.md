@@ -2,21 +2,6 @@
 
 Landing page for a Christmas letter from the shelter dogs of **Rivanimal**. Visitors browse a catalog of gift suggestions, buy the items in external stores, and deliver them to the shelter, where the "Reyes Magos" hand them to the dogs.
 
-## Status
-
-Work in progress on `feature/landing-page`; the layout is complete and real assets and links are still pending.
-
-- [x] Design tokens and `page-shell` utility
-- [x] `BaseLayout` with Google Fonts and SEO
-- [x] `Button`, `Badge`, and `SectionHeading`
-- [x] Hero with temporary logo
-- [x] How-it-works section and step cards
-- [x] Gift categories and catalog data
-- [x] Gift catalog (cards, filters, grid, and notice)
-- [x] Final call to action
-- [x] Site footer
-- [x] Responsive and accessibility polish
-
 ## Stack
 
 - Astro 7 with static output
@@ -31,7 +16,7 @@ No UI framework; the catalog filter is a small vanilla script.
 
 ```sh
 pnpm install
-pnpm dev --background   # manage with: astro dev status | stop | logs
+pnpm dev --background   # manage with: pnpm exec astro dev status | stop | logs
 pnpm build
 pnpm preview
 pnpm exec astro ...
@@ -42,41 +27,24 @@ pnpm exec prettier --write .
 
 ```text
 src/
-├── assets/
-│   └── rivanimal-logo.png       # temporary crop from the mockup
-├── components/
-│   ├── Badge.astro
-│   ├── Button.astro
-│   ├── CatalogNotice.astro
-│   ├── FinalCta.astro
-│   ├── GiftCard.astro
-│   ├── GiftCatalog.astro
-│   ├── GiftFilters.astro
-│   ├── GiftGrid.astro
-│   ├── Hero.astro
-│   ├── HowItWorks.astro
-│   ├── SectionHeading.astro
-│   ├── SiteFooter.astro
-│   └── StepCard.astro
-├── data/
-│   ├── categories.ts            # category ids, labels, emoji, badge tone
-│   └── gifts.ts                 # gift catalog entries
-├── layouts/
-│   └── BaseLayout.astro
-├── pages/
-│   └── index.astro
-└── styles/
-    └── global.css               # theme tokens, page-shell, base styles
+├── assets/       # Images imported and optimized by Astro
+├── components/   # Page sections and reusable UI components
+├── data/         # Catalog types and content (categories and gifts)
+├── layouts/      # HTML shell, global styles, and SEO metadata
+├── pages/        # File-based routes; index.astro is the landing page
+└── styles/       # Tailwind theme tokens, utilities, and base styles
+
+public/           # Static files served as-is, such as favicons
 ```
 
 ## Conventions
 
 - All copy is in Spanish and the site is fully static (`lang="es"`).
-- Copy stays colocated in its component. Catalog content lives in `src/data/`, not in a global site config.
+- Copy stays colocated in its component; shared catalog content lives in `src/data/`.
 - Colors, fonts, radius, and shadows are Tailwind theme tokens in `src/styles/global.css`.
 - Use the AA-safe oranges for text and buttons: `flame-600` on buttons and `flame-700` for small text. `flame-500` is only for large decorative surfaces.
 - Do not add dependencies unless they are strictly necessary. Explain the reason before adding one.
-- Run Prettier as the final task of every step.
+- Run Prettier before handing off.
 
 ## Placeholders
 
