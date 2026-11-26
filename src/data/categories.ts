@@ -1,7 +1,7 @@
 export type BadgeVariant = 'berry' | 'forest' | 'flame' | 'ink' | 'gold'
 
 export const CATEGORIES = {
-  juguetes: { label: 'Juguetes', emoji: '🧸', badgeVariant: 'berry' },
+  juguetes: { label: 'Juguetes', emoji: '🎮', badgeVariant: 'berry' },
   'camas-mantas': {
     label: 'Camas y mantas',
     emoji: '🛏️',
