@@ -1,5 +1,5 @@
 ---
-import { CATEGORIES } from '../data/categories'
+import { ANIMALS, CATEGORIES } from '../data/categories'
 
 interface Props {
   class?: string
@@ -8,10 +8,18 @@ interface Props {
 const { class: className } = Astro.props
 
 const filters = [
-  { id: 'todos', label: 'Todos' },
+  { id: 'todos', label: 'Todos', kind: 'all' },
+  ...Object.entries(ANIMALS)
+    .filter(([id]) => id !== 'ambos')
+    .map(([id, animal]) => ({
+      id,
+      label: `${animal.emoji} ${animal.label}`,
+      kind: 'animal',
+    })),
   ...Object.entries(CATEGORIES).map(([id, category]) => ({
     id,
     label: `${category.emoji} ${category.label}`,
+    kind: 'category',
   })),
 ]
 ---
@@ -22,7 +30,7 @@ const filters = [
     className,
   ]}
   role="group"
-  aria-label="Filtrar regalos por categoría"
+  aria-label="Filtrar regalos por animal o categoría"
   data-gift-filters
 >
   {filters.map((filter) => (
@@ -32,6 +40,7 @@ const filters = [
       aria-pressed={filter.id === 'todos' ? 'true' : 'false'}
       aria-controls="gift-grid"
       data-filter={filter.id}
+      data-filter-kind={filter.kind}
     >
       {filter.label}
     </button>
@@ -48,6 +57,7 @@ const filters = [
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
           const filter = button.dataset.filter
+          const kind = button.dataset.filterKind
           let visible = 0
 
           buttons.forEach((otherButton) => {
@@ -58,8 +68,16 @@ const filters = [
           })
 
           cards.forEach((card) => {
-            const matches =
-              filter === 'todos' || card.dataset.category === filter
+            let matches = filter === 'todos'
+
+            if (!matches && kind === 'animal') {
+              const animal = card.dataset.animal
+              matches = animal === filter || animal === 'ambos'
+            }
+
+            if (!matches && kind === 'category') {
+              matches = card.dataset.category === filter
+            }
 
             card.hidden = !matches
 
