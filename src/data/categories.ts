@@ -13,9 +13,18 @@ export const CATEGORIES = {
     emoji: '💊',
     badgeVariant: 'ink',
   },
+  accesorios: { label: 'Accesorios', emoji: '🛍️', badgeVariant: 'gold' },
 } as const satisfies Record<
   string,
   { label: string; emoji: string; badgeVariant: BadgeVariant }
 >
 
 export type CategoryId = keyof typeof CATEGORIES
+
+export const ANIMALS = {
+  perros: { label: 'Perros', emoji: '🐶' },
+  gatos: { label: 'Gatos', emoji: '🐱' },
+  ambos: { label: 'Perros y gatos', emoji: '🐾' },
+} as const satisfies Record<string, { label: string; emoji: string }>
+
+export type AnimalId = keyof typeof ANIMALS

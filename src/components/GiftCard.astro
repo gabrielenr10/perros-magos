@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import Badge from './Badge.astro'
-import { CATEGORIES } from '../data/categories'
+import { ANIMALS, CATEGORIES } from '../data/categories'
 import type { Gift } from '../data/gifts'
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 const { gift } = Astro.props
 
 const category = CATEGORIES[gift.category]
+const animal = ANIMALS[gift.animal]
 const badge = gift.badgeOverride ?? {
   label: `${category.emoji} ${category.label}`,
   variant: category.badgeVariant,
@@ -21,19 +22,31 @@ const badge = gift.badgeOverride ?? {
   class="flex h-full flex-col overflow-hidden rounded-card border border-ink-900/5 bg-white shadow-card"
   data-gift-card
   data-category={gift.category}
+  data-animal={gift.animal}
 >
   <div class="relative aspect-[4/3] overflow-hidden bg-mist-200">
-    {gift.image && (
+    {gift.image ? (
       <Image
         src={gift.image}
         alt={gift.imageAlt ?? gift.name}
+        loading="eager"
         class="h-full w-full object-cover"
       />
+    ) : (
+      <div
+        class="flex h-full w-full items-center justify-center text-6xl opacity-40"
+        aria-hidden="true"
+      >
+        {category.emoji}
+      </div>
     )}
 
     <div class="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
       <Badge variant={badge.variant}>{badge.label}</Badge>
-      <Badge variant="ink">Por confirmar</Badge>
+      <Badge variant="ink">
+        <span aria-hidden="true">{animal.emoji}</span>
+        {animal.label}
+      </Badge>
     </div>
 
     {gift.highlight && (
